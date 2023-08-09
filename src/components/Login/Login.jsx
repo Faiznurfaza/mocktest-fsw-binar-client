@@ -25,7 +25,7 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://62.72.27.124/api/user/login", {
+      const res = await axios.post("https://62.72.27.124/api/user/login", {
         password,
       });
       const userId = res.data.user.id;

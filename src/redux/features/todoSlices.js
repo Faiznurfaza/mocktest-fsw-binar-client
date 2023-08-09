@@ -6,13 +6,13 @@ const initialState = {
 };
 
 export const fetchListData = createAsyncThunk("getList", async (userid) => {
-  const response = await axios.get(`http://62.72.27.124/api/list/${userid}`);
+  const response = await axios.get(`https://62.72.27.124/api/list/${userid}`);
   return response.data.list;
 });
 
 export const addList = createAsyncThunk("addList", async (props) => {
   const response = await axios.post(
-    `http://62.72.27.124/api/list/${props.id}`,
+    `https://62.72.27.124/api/list/${props.id}`,
     {
       list: props.list,
     }
@@ -23,7 +23,7 @@ export const addList = createAsyncThunk("addList", async (props) => {
 
 export const editList = createAsyncThunk("editList", async (props) => {
   const response = await axios.patch(
-    `http://62.72.27.124/api/list/update/${props.id}`,
+    `https://62.72.27.124/api/list/update/${props.id}`,
     {
       list: props.list,
     }
@@ -33,7 +33,7 @@ export const editList = createAsyncThunk("editList", async (props) => {
 });
 
 export const deleteList = createAsyncThunk("deleteList", async (listid) => {
-  await axios.delete(`http://62.72.27.124/api/list/delete/${listid}`);
+  await axios.delete(`https://62.72.27.124/api/list/delete/${listid}`);
 
   return listid;
 });
